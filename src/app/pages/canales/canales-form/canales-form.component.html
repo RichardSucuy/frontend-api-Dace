@@ -1,0 +1,57 @@
+<!-- canales-form.component.html -->
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos del Canal</h3>
+      </div>
+      <div class="card-body">
+        <!-- NOMBRE DEL CANAL -->
+        <div class="form-group row mb-2">
+          <label for="nombreCan" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nombre del canal: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="nombreCan" id="nombreCan" class="form-control" 
+              placeholder="Nombre del canal" [(ngModel)]="canalForm.nombre_can">
+          </div>
+        </div>
+
+        <!-- DESCRIPCIÓN DEL CANAL -->
+        <div class="form-group row mb-2">
+          <label for="descripcionCan" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Descripción: 
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <textarea name="descripcionCan" id="descripcionCan" class="form-control" 
+              placeholder="Descripción del canal" [(ngModel)]="canalForm.descripcion_can" rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- EXTENSIÓN DEL CANAL -->
+        <div class="form-group row mb-2">
+          <label for="extensionCan" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Extensión: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="extensionCan" id="extensionCan" class="form-control" 
+              placeholder="Extensión del canal" [(ngModel)]="canalForm.extension_can">
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info" (click)="onSubmit()">
+          <i class="fas fa-save"></i>&nbsp; Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/canales" class="btn btn-danger">
+          <i class="fas fa-ban"></i>&nbsp;
+          Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

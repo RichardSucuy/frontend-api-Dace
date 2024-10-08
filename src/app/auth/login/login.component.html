@@ -1,0 +1,60 @@
+<div class="hold-transition login-page">
+  <div class="login-box animate__animated animate__backInLeft">
+    <div class="login-logo">
+      <a href="#"><b>CallCenter</b></a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Iniciar Sesión</p>
+
+        <form class="mb-3">
+          <div class="input-group mb-3">
+            <input type="text" id="username" name="username" class="form-control" placeholder="Usuario" [(ngModel)]="loginForm.username" >
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" [(ngModel)]="loginForm.password" >
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" id="remember" name="remember" [(ngModel)]="loginForm.rememberMe" >
+                <label for="remember">
+                  Recordarme
+                </label>
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+              <button type="button" class="btn btn-info btn-block" (click)="onLogin()">Acceder</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+
+
+        <!-- /.social-auth-links -->
+
+        <p class="mb-1">
+          <a href="forgot-password.html" style="color: #17A2B8;">¿Olvidé mi contraseña?</a>
+        </p>
+        <p class="mb-0">
+          <a href="register.html" class="text-center" style="color: #17A2B8;">Registrarme como usuario</a>
+        </p>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  <!-- /.login-box -->
+
+</div>

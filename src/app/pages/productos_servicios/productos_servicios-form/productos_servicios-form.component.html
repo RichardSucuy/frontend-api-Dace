@@ -1,0 +1,46 @@
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Datos del Producto o Servicio</h3>
+        </div>
+        <div class="card-body">
+          <!-- CATEGORÍA -->
+          <div class="form-group row mb-2">
+            <label for="categoria" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+              Categoría: <strong class="text-red">*</strong>
+            </label>
+            <div class="col-xs-8 col-lg-8">
+              <input type="text" name="categoria" id="categoria" class="form-control" 
+                placeholder="Categoría del producto o servicio" [(ngModel)]="productoServicioForm.categoria_prod_serv" >
+            </div>
+          </div>
+  
+          <!-- DESCRIPCIÓN -->
+          <div class="form-group row mb-2">
+            <label for="descripcion" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+              Descripción: 
+            </label>
+            <div class="col-xs-8 col-lg-8">
+              <textarea name="descripcion" id="descripcion" class="form-control" 
+                placeholder="Descripción del producto o servicio" [(ngModel)]="productoServicioForm.descripcion_prod_serv" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-info" (click)="onSubmit()">
+            <i class="fas fa-save"></i>&nbsp; Guardar
+          </button>
+          &nbsp;
+          <a routerLink="/productos_servicios" class="btn btn-danger">
+            <i class="fas fa-ban"></i>&nbsp;
+            Cancelar
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+  

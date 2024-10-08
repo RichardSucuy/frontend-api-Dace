@@ -1,0 +1,135 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos del Cliente</h3>
+      </div>
+      <div class="card-body">
+
+        <!-- IDENTIFICACION -->
+        <div class="from-group row mb-2">
+          <label for="identificacion" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Identificación: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <div class="input-group">
+              <input type="text" name="identificacion" id="identificacion" class="form-control" maxlength="10" minlength="10"
+                placeholder="Cédula de Identidad" [(ngModel)]="clienteForm.cedula_cli" >
+              <div class="input-group-append">
+                <button type="button" class="btn btn-secondary" (click)="consultar()">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- APELLIDOS -->
+        <div class="form-group row mb-2">
+          <label for="apellido" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Apellidos: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="apellido" id="apellido" class="form-control" maxlength="300"
+              placeholder="Apellidos" [(ngModel)]="clienteForm.apellido_cli" >
+          </div>
+        </div>
+
+        <!-- NOMBRES -->
+        <div class="form-group row mb-2">
+          <label for="nombre" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nombres: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="nombre" id="nombre" class="form-control" maxlength="300"
+              placeholder="Nombres" [(ngModel)]="clienteForm.nombre_cli" >
+          </div>
+        </div>
+
+        <!-- FECHA DE NACIMIENTO -->
+        <div class="form-group row mb-2">
+          <label for="fechaNacimiento" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Fecha de Nacimiento: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="date" name="fechaNacimiento" id="fechaNacimiento" class="form-control" [(ngModel)]="clienteForm.nacimiento_cli" >
+          </div>
+        </div>
+
+        <!-- CIUDAD -->
+        <div class="form-group row mb-2">
+          <label for="ciudad" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Ciudad: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="ciudad" id="ciudad" class="form-control select2" [(ngModel)]="clienteForm.id_ciudad">
+              <option [value]="null" selected="selected">Seleccione</option>
+              <option [value]="ciudad.id_ciudad" *ngFor="let ciudad of ciudades" >{{ ciudad.nombre_ciu }} / {{ ciudad.provincia }}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- TELEFONO -->
+        <div class="form-group row mb-2">
+          <label for="telefono" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Teléfono
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" class="form-control" id="telefono" maxlength="50" placeholder="Teléfono" [(ngModel)]="clienteForm.telefono_cli" >
+          </div>
+        </div>
+
+        <!-- NICK REDES -->
+        <div class="form-group row mb-2">
+          <label for="nick" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nick Redes:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" class="form-control" id="nick" maxlength="50" placeholder="Nick Redes" [(ngModel)]="clienteForm.nick_redes" >
+          </div>
+        </div>
+
+        <!-- SOCIO -->
+        <div class="form-group row mb-2">
+          <label for="socio" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Socio:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <div class="form-check pt-lg-2">
+              <input type="checkbox" name="socio" id="socio" class="form-check-input" [(ngModel)]="clienteForm.socio_cli" >
+            </div>
+          </div>
+        </div>
+
+        <!-- STATUS -->
+        <!-- <div class="form-group row mb-2">
+          <label for="status" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Activo:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <div class="form-check pt-lg-2">
+              <input type="checkbox" name="" id="" class="form-check-input">
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info" (click)="onSubmit()">
+          <i class="fas fa-save"></i>&nbsp; Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/clientes" class="btn btn-danger">
+          <i class="fas fa-ban"></i>&nbsp;
+          Cancelar
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

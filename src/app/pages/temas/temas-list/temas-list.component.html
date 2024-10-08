@@ -1,0 +1,41 @@
+<!-- temas-list.component.html -->
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Listado de Temas</h3>
+            <div class="float-right">
+              <a routerLink="./nuevo" class="btn btn-info btn-sm">
+                <i class="fa fa-plus" aria-hidden="true"></i> Nuevo
+              </a>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table class="table table-bordered table-striped" id="tblTemas">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th class="text-center" style="width: 150px;">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Los datos de la tabla serán cargados dinámicamente por DataTables -->
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal para detalles de tema (similar al modal de motivos) -->
+<div id="mdlTema" class="modal fade">
+  <app-temas-details></app-temas-details>
+</div>

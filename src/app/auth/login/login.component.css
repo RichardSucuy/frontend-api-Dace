@@ -1,0 +1,85 @@
+.login-page {
+  background-image: url('../../../assets/dist/img/fondo-login.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.login-card-body, .login-box {
+  background-color: #23272B;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  overflow: hidden;
+}
+
+.login-card-body {
+  border-radius: 0px 0px 5px 5px;
+  -webkit-border-radius: 0px 0px 5px 5px;
+  -moz-border-radius: 0px 0px 5px 5px;
+  -ms-border-radius: 0px 0px 5px 5px;
+  -o-border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
+}
+
+.login-logo > a {
+  color: white;
+  display: block;
+  padding: 10px;
+}
+
+.login-card-body, .login-box {
+  background-color: #23272B;
+  border-radius: 5px;
+}
+
+.login-card-body {
+  border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
+  -webkit-border-radius: 0px 0px 5px 5px;
+  -moz-border-radius: 0px 0px 5px 5px;
+  -ms-border-radius: 0px 0px 5px 5px;
+  -o-border-radius: 0px 0px 5px 5px;
+}
+
+.login-logo > a {
+  color: white;
+  display: block; /* Agrega esta línea */
+  padding: 10px; /* Ajusta el relleno según sea necesario */
+}
+
+/* Cambia el color del texto y los iconos */
+.login-card-body {
+  color: #ffffff; /* Cambia el color del texto a blanco */
+}
+
+.login-card-body a,
+.login-card-body a:hover {
+  color: #17A2B8; /* Cambia el color de los enlaces */
+}
+
+.login-card-body input::placeholder {
+  color: #6c757d; /* Cambia el color del texto de marcador de posición */
+}
+
+.login-card-body .fas {
+  color: #ffffff; /* Cambia el color de los iconos FontAwesome a blanco */
+}
+
+/* Cambia el color del botón */
+.login-card-body .btn-info {
+  background-color: #17A2B8; /* Cambia el color de fondo del botón */
+  color: #ffffff; /* Cambia el color del texto del botón a blanco */
+  border-color: #17A2B8; /* Cambia el color del borde del botón */
+}
+
+/* Cambia el color del enlace "¿Olvidé mi contraseña?" */
+.login-card-body a[href="forgot-password.html"] {
+  color: #17A2B8; /* Cambia el color del enlace "¿Olvidé mi contraseña?" */
+}
+
+/* Cambia el color del enlace "Registrarme como usuario" */
+.login-card-body a[href="register.html"] {
+  color: #17A2B8; /* Cambia el color del enlace "Registrarme como usuario" */
+}

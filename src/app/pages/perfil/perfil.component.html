@@ -1,0 +1,109 @@
+<section class="content">
+  <div class="container-fluid">
+    <!-- Main row -->
+    <div class="row">
+      <div class="col-md-3">
+        <!-- Profile Image -->
+        <div class="card">
+          <div class="card-body box-profile">
+            <div class="text-center">
+              <img class="profile-user-img img-fluid img-circle" src="./assets/dist/img/user2-160x160.jpg"
+                alt="User profile picture" />
+            </div>
+
+            <h3 class="profile-username text-center">
+              EMerchan4
+            </h3>
+
+            <p class="text-muted text-center">emerchan4&#64;gmail.com</p>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="exampleInputFile"
+                    accept="image/jpeg,image/pjpeg,image/png,image/bmp" />
+                  <label class="custom-file-label" for="exampleInputFile" #tituloFile>No se ha seleccionado ninguna
+                    imagen</label>
+                </div>
+              </div>
+            </div>
+
+            <a href="#" class="btn btn-info btn-block">
+              <i class="fas fa-sync-alt"></i>&nbsp;
+              Actualizar foto
+            </a>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Mi Perfil de usuario</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="tab-pane" id="settings">
+              <form class="form-horizontal">
+
+                <div class="form-group row">
+                  <label for="identificacion" class="col-sm-2 col-form-label font-weight-normal">Identificación:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="identificacion" placeholder="Identificación" formControlName="identificacion" />
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputName" class="col-sm-2 col-form-label font-weight-normal">Nombre:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputName" placeholder="Nombre" formControlName="nombre" />
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="email" class="col-sm-2 col-form-label font-weight-normal">Correo:</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" placeholder="Correo" formControlName="email" />
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="user" class="col-sm-2 col-form-label font-weight-normal">Usuario:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="user" placeholder="Usuario"
+                      formControlName="userName" />
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="password" class="col-sm-2 col-form-label font-weight-normal">Contraseña:</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña" formControlName="password" />
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="offset-sm-2 col-sm-10">
+                    <button type="submit" class="btn btn-info">
+                      <i class="fas fa-save"></i>&nbsp;
+                      Guardar cambios
+                    </button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row (main row) -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,41 @@
+<!-- ciudad-list.component.html -->
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Listado de Ciudades</h3>
+            <div class="float-right">
+              <a routerLink="./nuevo" class="btn btn-info btn-sm">
+                <i class="fa fa-plus" aria-hidden="true"></i> Nuevo
+              </a>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table class="table table-bordered table-striped" id="tblCiudades">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Provincia</th>
+                  <th class="text-center" style="width: 150px;">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Los datos de la tabla serán cargados dinámicamente por DataTables -->
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal para detalles de ciudad (similar al modal de temas) -->
+<div id="mdlCiudad" class="modal fade">
+  <app-ciudades-details></app-ciudades-details>
+</div>

@@ -1,0 +1,46 @@
+<!-- ciudades-form.component.html -->
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos de la Ciudad</h3>
+      </div>
+      <div class="card-body">
+        <!-- NOMBRE DE LA CIUDAD -->
+        <div class="form-group row mb-2">
+          <label for="nombreCiu" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nombre de la ciudad: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="nombreCiu" id="nombreCiu" class="form-control" 
+              placeholder="Nombre de la ciudad" [(ngModel)]="ciudadForm.nombre_ciu">
+          </div>
+        </div>
+
+        <!-- PROVINCIA -->
+        <div class="form-group row mb-2">
+          <label for="provincia" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Provincia: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="provincia" id="provincia" class="form-control" 
+              placeholder="Provincia" [(ngModel)]="ciudadForm.provincia">
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info" (click)="onSubmit()">
+          <i class="fas fa-save"></i>&nbsp; Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/ciudades" class="btn btn-danger">
+          <i class="fas fa-ban"></i>&nbsp;
+          Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

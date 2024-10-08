@@ -1,0 +1,79 @@
+<!-- usuarios-form.component.html -->
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos del Usuario</h3>
+      </div>
+      <div class="card-body">
+        <!-- CÉDULA -->
+        <div class="form-group row mb-2">
+          <label for="cedulaUsu" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Cédula: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="cedulaUsu" id="cedulaUsu" class="form-control" 
+              placeholder="Cédula del usuario" [(ngModel)]="usuarioForm.cedula_usu">
+          </div>
+        </div>
+
+        <!-- NOMBRE -->
+        <div class="form-group row mb-2">
+          <label for="nombreUsu" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nombre: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="nombreUsu" id="nombreUsu" class="form-control" 
+              placeholder="Nombre del usuario" [(ngModel)]="usuarioForm.nombre_usu">
+          </div>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form-group row mb-2">
+          <label for="emailUsu" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Email: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="email" name="emailUsu" id="emailUsu" class="form-control" 
+              placeholder="Email del usuario" [(ngModel)]="usuarioForm.email_usu">
+          </div>
+        </div>
+
+        <!-- USUARIO -->
+        <div class="form-group row mb-2">
+          <label for="user" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Usuario: 
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="user" id="user" class="form-control" 
+              placeholder="Nombre de usuario" [(ngModel)]="usuarioForm.user">
+          </div>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group row mb-2">
+          <label for="password" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Contraseña: 
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="password" name="password" id="password" class="form-control" 
+              placeholder="Contraseña" [(ngModel)]="usuarioForm.password">
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info" (click)="onSubmit()">
+          <i class="fas fa-save"></i>&nbsp; Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/usuarios" class="btn btn-danger">
+          <i class="fas fa-ban"></i>&nbsp;
+          Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

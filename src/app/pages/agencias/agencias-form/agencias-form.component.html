@@ -1,0 +1,70 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos de la Agencia</h3>
+      </div>
+      <div class="card-body">
+
+        <!-- NOMBRE DE AGENCIA -->
+        <div class="form-group row mb-2">
+          <label for="nombre_age" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nombre: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="nombre_age" id="nombre_age" class="form-control" 
+              placeholder="Nombre de la Agencia" [(ngModel)]="agenciaForm.nombre_age" >
+          </div>
+        </div>
+
+        <!-- TELÉFONO -->
+        <div class="form-group row mb-2">
+          <label for="telefono_age" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Teléfono: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="telefono_age" id="telefono_age" class="form-control"
+              placeholder="Teléfono de la Agencia" [(ngModel)]="agenciaForm.telefono_age" >
+          </div>
+        </div>
+
+        <!-- DIRECCIÓN -->
+        <div class="form-group row mb-2">
+          <label for="direccion_age" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Dirección:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="direccion_age" id="direccion_age" class="form-control" 
+              placeholder="Dirección de la Agencia" [(ngModel)]="agenciaForm.direccion_age" >
+          </div>
+        </div>
+
+        <!-- CIUDAD -->
+        <div class="form-group row mb-2">
+          <label for="ciudad" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Ciudad: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="ciudad" id="ciudad" class="form-control select2" [(ngModel)]="agenciaForm.id_ciudad">
+              <option [value]="null" selected="selected">Seleccione</option>
+              <option [value]="ciudad.id_ciudad" *ngFor="let ciudad of ciudades" >{{ ciudad.nombre_ciu }}</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info" (click)="onSubmit()">
+          <i class="fas fa-save"></i> Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/agencias" class="btn btn-danger">
+          <i class="fas fa-ban"></i> Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

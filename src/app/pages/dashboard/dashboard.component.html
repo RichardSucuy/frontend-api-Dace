@@ -1,0 +1,149 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <!-- Small boxes - DESKTOP -->
+    <div class="row">
+      <!-- INTERACCIONES -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <!-- small box -->
+        <div class="small-box bg-info">
+          <div class="inner">
+            <h3>{{ interaccionesCount }}</h3>
+            <p>Interacciones</p>
+          </div>
+          <div class="icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <a routerLink="/interacciones" class="small-box-footer">Ir <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+
+      <!-- USUARIOS -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <!-- small box -->
+        <div class="small-box bg-danger">
+          <div class="inner">
+            <h3>{{ usuariosCount }}</h3>
+            <p>Usuarios</p>
+          </div>
+          <div class="icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <a routerLink="/usuarios" class="small-box-footer">Ir <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+
+      <!-- CLIENTES -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <!-- small box -->
+        <div class="small-box bg-purple">
+          <div class="inner">
+            <h3>{{ clientesCount }}</h3>
+            <p>Clientes</p>
+          </div>
+          <div class="icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <a routerLink="/clientes" class="small-box-footer">Ir <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+
+      <!-- MOTIVOS -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <!-- small box -->
+        <div class="small-box bg-success">
+          <div class="inner">
+            <h3>{{ motivosCount }}</h3>
+            <p>Motivos</p>
+          </div>
+          <div class="icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <a routerLink="/motivos" class="small-box-footer">Ir <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main row -->
+
+    <div class="row">
+      <!-- ULTIMAS INTERACCIONES -->
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header bg-olive">
+            <h3 class="card-title">
+              <i class="fas fa-history"></i>
+              Últimas Interacciones
+            </h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool text-white" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <!-- Botón para descargar el reporte -->
+              <button type="button" class="btn btn-tool text-white" (click)="exportToExcel()">
+                <i class="fas fa-file-excel"></i> Exportar
+              </button>
+            </div>
+          </div>
+          <div class="card-body table-responsive p-0">
+            <table class="table table-sm table-striped text-nowrap" id="tblInteraccionesUltimas">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Cliente</th>
+                  <th>Tema</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIVIDAD RECIENTE -->
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header bg-lightblue">
+            <h3 class="card-title">
+              <i class="fas fa-history"></i>
+              Actividad Reciente
+            </h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool text-white" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body table-responsive p-0">
+            <table class="table table-sm table-striped text-nowrap">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Actividad</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let actividad of actividadReciente">
+                  <td>{{ actividad.codigo }}</td>
+                  <td>
+                    {{ actividad.descripcion }}
+                    <br />
+                    <small>{{ actividad.detalle }}</small>
+                  </td>
+                  <td>{{ actividad.fecha }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row (main row) -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

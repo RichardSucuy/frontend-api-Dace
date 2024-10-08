@@ -1,0 +1,141 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "app-dace-frontend": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/app-dace-frontend",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/assets/plugins/fontawesome-free/css/all.min.css",
+              "src/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
+              "src/assets/plugins/select2/css/select2.min.css",
+              "src/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css",
+              "src/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css",
+              "src/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css",
+              "src/assets/plugins/toastr/toastr.min.css",
+              "src/assets/dist/css/adminlte.min.css"
+            ],
+            "scripts": [
+              "src/assets/plugins/jquery/jquery.min.js",
+              "src/assets/plugins/jquery-ui/jquery-ui.min.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js",
+              "src/assets/plugins/datatables/jquery.dataTables.min.js",
+              "src/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js",
+              "src/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js",
+              "src/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js",
+              "src/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js",
+              "src/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js",
+              "src/assets/plugins/jszip/jszip.min.js",
+              "src/assets/plugins/pdfmake/pdfmake.min.js",
+              "src/assets/plugins/pdfmake/vfs_fonts.js",
+              "src/assets/plugins/datatables-buttons/js/buttons.html5.min.js",
+              "src/assets/plugins/datatables-buttons/js/buttons.print.min.js",
+              "src/assets/plugins/datatables-buttons/js/buttons.colVis.min.js",
+              "src/assets/plugins/toastr/toastr.min.js",
+              "src/assets/plugins/moment/moment.min.js",
+              "src/assets/plugins/select2/js/select2.full.min.js",
+              "src/assets/plugins/inputmask/jquery.inputmask.min.js",
+              "src/assets/dist/js/adminlte.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "app-dace-frontend:build:production"
+            },
+            "development": {
+              "buildTarget": "app-dace-frontend:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "app-dace-frontend:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  }
+}

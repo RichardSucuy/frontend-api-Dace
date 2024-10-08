@@ -1,0 +1,45 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos del Tema</h3>
+      </div>
+      <div class="card-body">
+        <!-- NOMBRE DEL TEMA -->
+        <div class="form-group row mb-2">
+          <label for="nombreTema" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nombre del tema: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="nombreTema" id="nombreTema" class="form-control" 
+              placeholder="Nombre del tema" [(ngModel)]="temaForm.nombre_tema">
+          </div>
+        </div>
+
+        <!-- DESCRIPCIÓN DEL TEMA -->
+        <div class="form-group row mb-2">
+          <label for="descripTema" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Descripción: 
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <textarea name="descripTema" id="descripTema" class="form-control" 
+              placeholder="Descripción del tema" [(ngModel)]="temaForm.descrip_tema" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info" (click)="onSubmit()">
+          <i class="fas fa-save"></i>&nbsp; Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/temas" class="btn btn-danger">
+          <i class="fas fa-ban"></i>&nbsp;
+          Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

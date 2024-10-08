@@ -1,0 +1,167 @@
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos de la Interacción</h3>
+      </div>
+      <div class="card-body">
+        <!-- FECHA -->
+        <div class="form-group row mb-2">
+          <label for="fecha" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Fecha: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="date" name="fecha" id="fecha" class="form-control" [(ngModel)]="interaccionForm.fecha">
+          </div>
+        </div>
+
+        <!-- CANTIDAD DE MENSAJES -->
+        <div class="form-group row mb-2">
+          <label for="cant_mensaje" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Cantidad de Mensajes:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="number" name="cant_mensaje" id="cant_mensaje" class="form-control" placeholder="Cantidad de Mensajes" [(ngModel)]="interaccionForm.cant_mensaje">
+          </div>
+        </div>
+
+        <!-- NOMBRE DEL GRABADOR -->
+        <div class="form-group row mb-2">
+          <label for="nombre_graba" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nombre del Grabador:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="nombre_graba" id="nombre_graba" class="form-control" placeholder="Nombre del Grabador" [(ngModel)]="interaccionForm.nombre_graba">
+          </div>
+        </div>
+
+        <!-- OBSERVACIÓN -->
+        <div class="form-group row mb-2">
+          <label for="observacion" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Observación:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="observacion" id="observacion" class="form-control" placeholder="Observación" [(ngModel)]="interaccionForm.observacion">
+          </div>
+        </div>
+
+        <!-- DURACIÓN DE LA LLAMADA -->
+        <div class="form-group row mb-2">
+          <label for="duracion_llamada" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Duración de la Llamada:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="time" name="duracion_llamada" id="duracion_llamada" class="form-control" placeholder="HH:MM:SS" [(ngModel)]="interaccionForm.duracion_llamada">
+          </div>
+        </div>
+
+        <!-- USUARIO -->
+        <div class="form-group row mb-2">
+          <label for="usuario" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Usuario: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="usuario" id="usuario" class="form-control select2" [(ngModel)]="interaccionForm.id_usuario">
+              <option [value]="null">Seleccione</option>
+              <option *ngFor="let usuario of usuarios" [value]="usuario.id_usuario">{{ usuario.nombre_usu }}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- AGENCIA -->
+        <div class="form-group row mb-2">
+          <label for="agencia" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Agencia: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="agencia" id="agencia" class="form-control select3" [(ngModel)]="interaccionForm.id_agencia">
+              <option [value]="null">Seleccione</option>
+              <option *ngFor="let agencia of agencias" [value]="agencia.id_agencia">{{ agencia.nombre_age }}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- CANAL -->
+        <div class="form-group row mb-2">
+          <label for="canal" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Canal: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="canal" id="canal" class="form-control select4" [(ngModel)]="interaccionForm.id_canal">
+              <option [value]="null">Seleccione</option>
+              <option *ngFor="let canal of canales" [value]="canal.id_canal">{{ canal.nombre_can }}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- TEMA -->
+        <div class="form-group row mb-2">
+          <label for="tema" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Tema: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="tema" id="tema" class="form-control select5" [(ngModel)]="interaccionForm.id_tema">
+              <option [value]="null">Seleccione</option>
+              <option *ngFor="let tema of temas" [value]="tema.id_tema">{{ tema.nombre_tema }}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- CLIENTE -->
+        <div class="form-group row mb-2">
+          <label for="cliente" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Cliente: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="cliente" id="cliente" class="form-control select6" [(ngModel)]="interaccionForm.id_cliente">
+              <option [value]="null">Seleccione</option>
+              <option *ngFor="let cliente of clientes" [value]="cliente.id_cliente">{{ cliente.nombre_cli }}</option>
+            </select>
+          </div>
+        </div> 
+
+
+        <!-- PRODUCTOS Y SERVICIOS -->
+        <div class="form-group row mb-2">
+          <label for="productosServicios" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Productos/Servicios: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <div *ngFor="let prodServ of productosServicios; let i = index; trackBy: trackByFn">
+              <div class="input-group mb-2">
+                <select class="form-control" [(ngModel)]="productosServicios[i].id_producto_servicio" name="productoServicio-{{i}}">
+                  <option [value]="null">Seleccione</option>
+                  <option *ngFor="let ps of productosServiciosList" [value]="ps.id_producto_servicio">{{ ps.categoria_prod_serv }}</option>
+                </select>
+                <input type="text" class="form-control" [(ngModel)]="productosServicios[i].detalles" placeholder="Detalles" name="detalles-{{i}}">
+                <div class="input-group-append">
+                  <button class="btn btn-danger" type="button" (click)="removeProductoServicio(i)">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-info" type="button" (click)="addProductoServicio()">
+              <i class="fas fa-plus"></i> Añadir Producto/Servicio
+            </button>
+          </div>
+        </div>
+      
+
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info" (click)="onSubmit()">
+          <i class="fas fa-save"></i> Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/interacciones" class="btn btn-danger">
+          <i class="fas fa-ban"></i> Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
